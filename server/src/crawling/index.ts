@@ -1,8 +1,8 @@
 const puppeteer = require('puppeteer');
 
-export const crawling = async (keyword) => {
+const crawling = async () => {
     console.log("크롤링 시작")
-    const brower = await puppeteer.launch({headless: false});
+    const brower = await puppeteer.launch({headless: true});
     const page = await brower.newPage();
     await page.setDefaultNavigationTimeout(0);
     await page.setViewport({
@@ -58,6 +58,7 @@ export const crawling = async (keyword) => {
     page.close();
     brower.close();
     console.log("크롤링 종료")
+    return dataMap;
 }
 
 const getTd = async (page, idx) => {
@@ -75,6 +76,8 @@ const getTd = async (page, idx) => {
     }
     return Promise.resolve(data)
 }
+
+export default crawling;
 
 
 
