@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { ConnectionOptions, createConnection, getRepository, useContainer } from "typeorm";
+import { createConnection, getRepository } from "typeorm";
 import crawling from "../crawling";
 import { subscription } from "../entity/subscription";
 
