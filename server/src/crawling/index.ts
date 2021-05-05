@@ -36,7 +36,6 @@ const crawling = async () => {
     
     let dataMap = []
     const pageLength = await page.$$eval('#paging > a', (element) => element.length)
-    console.log(pageLength)
 
     for(let i = 1; i <= pageLength; i++){
         if(i !== 1){
@@ -46,14 +45,12 @@ const crawling = async () => {
             ])
         }
         const trLength = await page.$$eval(`div.mt_10 > table > tbody > tr`, (element) => element.length);
-        console.log(trLength)
+       
         for(let idx = 0; idx < trLength; idx++){
             const dataList = await getTd(page, idx)
             dataMap.push(dataList);
         }
     }
-    console.log(dataMap);
-
     page.waitForTimeout(3000);
     page.close();
     brower.close();

@@ -1,5 +1,7 @@
 import express from 'express';
 import config from './config';
+import cors from 'cors';
+import bodyparser from 'body-parser';
 
 const startServer = async () => {
     const app = express();
