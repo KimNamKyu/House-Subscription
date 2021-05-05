@@ -23,6 +23,9 @@ const globalStyle = css`
             box-sizing: inherit;
         }
     }
+    body{
+        margin: 0;
+    }
 `
 
 export default MyApp

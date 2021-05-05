@@ -6,8 +6,11 @@ const App = () => {
         <>
             <Layout>
                 <Layout.Header>
-                    <div>헤더</div>
+                    헤더
                 </Layout.Header>
+                <Layout.Banner>
+                    banner
+                </Layout.Banner>
                 <Layout.Main>
                     메인
                 </Layout.Main>
