@@ -1,4 +1,6 @@
 import React from 'react';
+import Banner from '../components/Banner';
+import Header from '../components/Header';
 import Layout from '../components/Layout';
 
 const App = () => {
@@ -6,10 +8,10 @@ const App = () => {
         <>
             <Layout>
                 <Layout.Header>
-                    헤더
+                    <Header />
                 </Layout.Header>
                 <Layout.Banner>
-                    banner
+                    <Banner />
                 </Layout.Banner>
                 <Layout.Main>
                     메인
