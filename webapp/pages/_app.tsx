@@ -1,5 +1,7 @@
 import { AppProps /*, AppContext */ } from 'next/app';
 import { Global, css } from '@emotion/react'
+import { Provider } from 'react-redux';
+import { wrapper } from '../store/store';
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
@@ -8,7 +10,6 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Global styles={globalStyle} />
         </>
     )
-
 }
 
 const globalStyle = css`
@@ -28,4 +29,4 @@ const globalStyle = css`
     }
 `
 
-export default MyApp
+export default wrapper.withRedux(MyApp);

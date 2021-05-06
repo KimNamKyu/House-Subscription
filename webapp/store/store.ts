@@ -1,18 +1,11 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-// import counterReducer from '../features/counter/counterSlice';
-import subscriptionReducer from '../feature/subscription/subscriptionSlice';
+import { combineReducers, configureStore} from '@reduxjs/toolkit';
+import { createWrapper, MakeStore } from 'next-redux-wrapper';
+import reducer from '../reducer';
 
-export const store = configureStore({
-  reducer: {
-    counter: subscriptionReducer
-  },
-});
+export type RootState = ReturnType<typeof reducer>;
 
-export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
-// export type AppThunk<ReturnType = void> = ThunkAction<
-//   ReturnType,
-//   RootState,
-//   unknown,
-//   Action<string>
-// >;
+const store: MakeStore<RootState> = () => configureStore({ reducer });
+export const wrapper = createWrapper<RootState>(store, {debug: true})
+
+
+

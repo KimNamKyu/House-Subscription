@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import BannerSlick from "./BannerSlick";
-
+import Subscription from './subscription'
 const Banner = () => {
     return (
         <>
@@ -8,6 +8,7 @@ const Banner = () => {
                 <div css={slicStyle}>
                     <div css={postStyle}>
                         오늘의 분양
+                        <Subscription />
                         <BannerSlick />
                     </div>
                 </div>
@@ -26,6 +27,7 @@ const wrapperStyle = css`
     position: relative;
 `
 const slicStyle = css`
+    margin: 0 auto;
     padding-top: 40px;
     padding: 0px 84px;
     text-align: center;

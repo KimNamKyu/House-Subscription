@@ -1,4 +1,4 @@
-export const data = [
+export default [
     {
         area: '서울',
         division: '민영',

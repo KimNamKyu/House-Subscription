@@ -1,9 +1,17 @@
+import { useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import loadData from "../action/subsciptionAction";
 
-const subscription = () => {
+const Subscription = () => {
+    const state = useSelector(state => state)
+    const dispatch = useDispatch();
+    const onClick = useCallback(() => {
+        dispatch(loadData())
+    },[],)
     return (
         <>
-            <button>클릭</button>
+            <button onClick={onClick}>클릭</button>
         </>
     )
 }
-export default subscription;
+export default Subscription;
