@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import BannerSlick from "./BannerSlick";
 
 const Banner = () => {
     return (
@@ -7,6 +8,7 @@ const Banner = () => {
                 <div css={slicStyle}>
                     <div css={postStyle}>
                         오늘의 분양
+                        <BannerSlick />
                     </div>
                 </div>
             </div>
@@ -22,7 +24,6 @@ const wrapperStyle = css`
     padding: 0px 10px;
     align-items: center;
     position: relative;
-    border-bottom: 1px solid rgb(231,231,231);
 `
 const slicStyle = css`
     padding-top: 40px;

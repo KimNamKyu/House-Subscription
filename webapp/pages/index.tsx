@@ -2,6 +2,8 @@ import React from 'react';
 import Banner from '../components/Banner';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
+import MainList from '../components/MainList';
+import Aside from '../components/Aside';
 
 const App = () => {
     return (
@@ -14,7 +16,8 @@ const App = () => {
                     <Banner />
                 </Layout.Banner>
                 <Layout.Main>
-                    메인
+                    <MainList />
+                    <Aside />
                 </Layout.Main>
             </Layout>
         </>
