@@ -7,8 +7,6 @@ const Banner = () => {
             <div css={wrapperStyle}>
                 <div css={slicStyle}>
                     <div css={postStyle}>
-                        오늘의 분양
-                        <Subscription />
                         <BannerSlick />
                     </div>
                 </div>

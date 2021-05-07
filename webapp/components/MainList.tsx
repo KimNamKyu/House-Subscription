@@ -1,15 +1,27 @@
 import { css } from "@emotion/react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { loadMagam } from "../action/subsciptionAction";
+import MainTable from "./MainTable";
 
 const MainList = () => {
+    const { magamData, error, isloding } = useSelector(state => state.subscription)
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(loadMagam())
+    }, [])
     return (
         <div css={wrapperMainStyle}>
-            메인
+            <span><h1>분양정보</h1></span>
+            <MainTable data={magamData} />
         </div>
     )
 }
 
 const wrapperMainStyle = css`
-    flex: 1 1 70%;
+    margin: 0 auto;
+    padding-top : 48px;
 `
 
 export default MainList;
