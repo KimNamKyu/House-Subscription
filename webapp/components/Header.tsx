@@ -5,7 +5,7 @@ const Header:React.FC = () => {
         <>
             <nav css={navStyle}>
                 <div>
-                    <h4>로고</h4>
+                    <h1>로고</h1>
                 </div>
                 <div css={navLeft}>
                     분양정보
