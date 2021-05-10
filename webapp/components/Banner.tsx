@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import BannerSlick from "./BannerSlick";
 import Subscription from './subscription'
-const Banner = () => {
+const Banner:React.FC = () => {
     return (
         <>
             <div css={wrapperStyle}>

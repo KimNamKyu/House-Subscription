@@ -46,7 +46,10 @@ const columns = [
     },
 ];
 
-const MainTable = ({ data }: any) => {
+interface tableProps {
+    data: any
+}
+const MainTable:React.FC<tableProps> = ({ data }: any) => {
     return (
         <div>
             <Table

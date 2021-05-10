@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 import MainList from '../components/MainList';
 import Aside from '../components/Aside';
 
-const App = () => {
+const App:React.FC = () => {
     return (
         <>
             <Layout>

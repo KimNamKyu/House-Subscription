@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 
-const Header = () => {
+const Header:React.FC = () => {
     return (
         <>
             <nav css={navStyle}>
@@ -15,7 +15,6 @@ const Header = () => {
             </nav>
         </>
     )
-    
 }
 
 const navStyle = css`
