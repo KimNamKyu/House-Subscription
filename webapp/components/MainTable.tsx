@@ -1,4 +1,5 @@
-import { Table, Tag, Radio, Space } from 'antd';
+import { Table, Tag, Button } from 'antd';
+import Link from 'next/link';
 
 const columns = [
     {
@@ -50,6 +51,9 @@ interface tableProps {
     data: any
 }
 const MainTable:React.FC<tableProps> = ({ data }: any) => {
+    const onClickHandler = () => {
+        
+    }
     return (
         <div>
             <Table
@@ -57,6 +61,11 @@ const MainTable:React.FC<tableProps> = ({ data }: any) => {
                 pagination={false}
                 dataSource={data}
             />
+            <Button 
+                block
+            > 
+                <Link href={"/detail"}>더 보기</Link> 
+            </Button>
         </div>
     );
 }
