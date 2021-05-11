@@ -60,6 +60,7 @@ const MainTable:React.FC<tableProps> = ({ data }: any) => {
             />
             <Button 
                 block
+                style={{height:'55px'}}
             > 
                 <Link href={"/detail"}>더 보기</Link> 
             </Button>

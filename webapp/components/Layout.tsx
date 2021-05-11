@@ -33,7 +33,7 @@ Layout.Banner = Banner;
 Layout.Main = Main;
 
 const headerStyle = css`
-    height: 66px;
+    position: relative;
 `
 
 const mainStyle = css`

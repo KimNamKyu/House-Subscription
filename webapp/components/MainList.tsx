@@ -22,7 +22,8 @@ const MainList:React.FC = () => {
 
 const wrapperMainStyle = css`
     margin: 0 auto;
-    padding-top : 48px;
+    padding-top: 48px;
+    padding-bottom: 48px;
 `
 
 export default MainList;
