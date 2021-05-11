@@ -1,13 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {loadData, loadMagam} from '../action/subsciptionAction';
+import {loadData, loadMagam, loadDetailData} from '../action/subsciptionAction';
 interface subscriptionState {
     isloding: false | true,
     data: Array<object>,
     magamData: Array<object>,
+    allData: Array<object>,
     error: any
 }
 
-const initialState : subscriptionState = { isloding: false, data: [], error: null, magamData:[]} 
+const initialState : subscriptionState = { isloding: false, data: [], error: null, magamData:[], allData: []} 
 
 const subscriptionSlice = createSlice({
     name: 'subscription',
@@ -34,6 +35,10 @@ const subscriptionSlice = createSlice({
         })
         .addCase(loadMagam.rejected, (state, action) => {
             state.error = action.payload;
+        })
+        .addCase(loadDetailData.fulfilled, (state, action) => {
+            state.allData = action.payload
+            state.isloding = false
         })
 })
 export default subscriptionSlice;

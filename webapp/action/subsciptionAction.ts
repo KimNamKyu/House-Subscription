@@ -50,3 +50,21 @@ export const loadMagam = createAsyncThunk('load/magam', async (data, thunkAPI) =
   console.log(filter)
   return filter
 });
+
+export const loadDetailData = createAsyncThunk('load/detail', async (data, thunkAPI) => {
+  const crawlingData = await delay(500, exData)
+  return crawlingData.map((v:any, idx: any) => {
+    let period = v.period.split(' ~ ')
+    if(dateChecker(period[0], period[1])){
+      return {...v, status: 1, key: idx}
+    }else{
+      let announcement = v.announcement
+      let day = getDay()
+      if(announcement < day){
+        return {...v, status: 3, key: idx}
+      }else{
+        return {...v, status: 2, key: idx}
+      }
+    }
+  })
+});

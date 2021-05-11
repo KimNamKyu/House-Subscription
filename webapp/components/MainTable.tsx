@@ -51,9 +51,6 @@ interface tableProps {
     data: any
 }
 const MainTable:React.FC<tableProps> = ({ data }: any) => {
-    const onClickHandler = () => {
-        
-    }
     return (
         <div>
             <Table

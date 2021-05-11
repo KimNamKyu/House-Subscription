@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import MainList from "../components/MainList";
+import DetailList from "../components/DetailList";
 
 const detail:React.FC = () => {
     return (
@@ -10,7 +11,7 @@ const detail:React.FC = () => {
                     <Header />
                 </Layout.Header>
                 <Layout.Main>
-                    <MainList />
+                    <DetailList />
                 </Layout.Main>
             </Layout>
         </>
