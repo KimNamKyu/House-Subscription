@@ -1,11 +1,22 @@
 import { css } from "@emotion/react";
-
+import { Input } from 'antd';
 const Header:React.FC = () => {
+    const {Search} = Input;
+    const onSearch = () => {
+        
+    }
     return (
         <>
             <nav css={navStyle}>
+                <div css={logoStyle}>
+                    로고
+                </div>
                 <div>
-                    <h1>로고</h1>
+                    <Search 
+                        placeholder="분양 지역을 입력하세요." 
+                        onSearch={onSearch} 
+                        style={{ width: 300 }} 
+                    />
                 </div>
                 <div css={navLeft}>
                     분양정보
@@ -16,14 +27,17 @@ const Header:React.FC = () => {
         </>
     )
 }
+const logoStyle = css`
+    flex: 0 0 auto;
+    align-items: center;
+    margin-right: auto;
+`
 
 const navStyle = css`
     display: flex;
     align-items:center;
     padding: 0px 20px 0px 30px;
     width: 100%;
-    border-bottom: 1px solid rgb(231,231,231);
-    background-color: transparent;
 `
 const navLeft = css`
     flex: 0 0 auto;
