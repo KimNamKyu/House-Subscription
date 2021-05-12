@@ -20,7 +20,7 @@ const Header:React.FC = () => {
         <>
             <nav css={navStyle}>
                 <div css={logoStyle}>
-                    로고
+                    <Link href='/'><a>로고</a></Link>
                 </div>
                 <div>
                     <Search 
@@ -48,6 +48,9 @@ const logoStyle = css`
     flex: 0 0 auto;
     align-items: center;
     margin-right: auto;
+    & > a {
+        color: black;
+    }
 `
 
 const navStyle = css`

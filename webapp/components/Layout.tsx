@@ -48,7 +48,6 @@ const mainStyle = css`
     position: relative;
 `
 const bannerStyle = css`
-    color: blue;
     height: 650px;
     border-bottom: 1px solid rgb(231,231,231);
 `

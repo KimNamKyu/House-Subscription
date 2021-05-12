@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 import exData from "../exData";
 import { getWeek, getDay, dateChecker } from "../util/getWeek";
 
@@ -12,8 +13,11 @@ export const loadData = createAsyncThunk('load/data', async (data, thunkAPI) => 
   const week = getWeek();
   let minWeek = week.shift();
   let maxWeek = week.pop();
-  const crawlingData = await delay(500, exData)
-  let filter = crawlingData.filter((item: any) => {
+  
+//   const res = await axios.get('_data.json')
+  const {aptInfo}:any = await delay(500, exData)
+  
+  let filter = aptInfo.filter((item: any) => {
     let period = item.period.split(' ~ ')
     if (period[0] >= "2021-04-09" && period[1] <= "2021-05-20") {
       return item
@@ -23,9 +27,9 @@ export const loadData = createAsyncThunk('load/data', async (data, thunkAPI) => 
 });
 
 export const loadMagam = createAsyncThunk('load/magam', async (data, thunkAPI) => {
-  const crawlingData = await delay(500, exData)
+    const {aptInfo}:any = await delay(500, exData)
   
-  let filter = crawlingData.filter((item: any) => {
+  let filter = aptInfo.filter((item: any) => {
     let period = item.period.split(' ~ ')
     if(dateChecker(period[0], period[1])){
       //청약기간이 있을때
@@ -51,8 +55,8 @@ export const loadMagam = createAsyncThunk('load/magam', async (data, thunkAPI) =
 });
 
 export const loadDetailData = createAsyncThunk('load/detail', async (data, thunkAPI) => {
-  const crawlingData = await delay(500, exData)
-  return crawlingData.map((v:any, idx: any) => {
+    const {aptInfo}:any = await delay(500, exData)
+  return aptInfo.map((v:any, idx: any) => {
     let period = v.period.split(' ~ ')
     if(dateChecker(period[0], period[1])){
       return {...v, status: 1, key: idx}

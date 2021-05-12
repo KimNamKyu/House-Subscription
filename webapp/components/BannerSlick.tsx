@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { loadData } from "../action/subsciptionAction";
 import BannerCard from "./BannerCard";
 import { RootState } from "../store/store";
+import { css } from "@emotion/react";
 
 const BannerSlick: React.FC = () => {
     const { data, error, isloding } = useSelector((state: RootState) => state.subscription)
@@ -14,14 +15,14 @@ const BannerSlick: React.FC = () => {
         dispatch(loadData())
     }, [])
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
     };
     return (
-        <div>
+        <div css={wrapperSlick}>
             <Slider {...settings}>
                 {!isloding ? data.map((item: any, idx: any) => {
                     return (
@@ -36,4 +37,21 @@ const BannerSlick: React.FC = () => {
         </div>
     )
 }
+const wrapperSlick = css`
+    width: 815px;
+    padding: 40px 84px;
+    margin: 0 auto;
+    .slick-prev:before {
+        color: black;
+        font-size: 30px;
+        position: absolute;
+        left: -25px;
+    }
+    .slick-next:before {
+        color: black;
+        font-size: 30px;
+        position: absolute;
+        right: -25px;
+    }
+`
 export default BannerSlick;

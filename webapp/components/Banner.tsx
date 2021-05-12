@@ -5,10 +5,9 @@ const Banner:React.FC = () => {
     return (
         <>
             <div css={wrapperStyle}>
-                <div css={slicStyle}>
-                    <div css={postStyle}>
-                        <BannerSlick />
-                    </div>
+                <span css={slicStyle}></span>
+                <div css={postStyle}>
+                    <BannerSlick />
                 </div>
             </div>
         </>
@@ -16,25 +15,23 @@ const Banner:React.FC = () => {
 }
 
 const wrapperStyle = css`
-    display: flex;
+    position: relative;
+    overflow-x: hidden;
+    height: 650px;
+`
+const slicStyle = css`
+    position: absolute;
+    width: 100%;
+    height: 510px;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(241, 242, 244);
+`
+
+const postStyle = css`
     width: 1200px;
     height: 100%;
     margin: 0px auto;
     padding: 0px 10px;
-    align-items: center;
-    position: relative;
-`
-const slicStyle = css`
-    margin: 0 auto;
-    padding-top: 40px;
-    padding: 0px 84px;
-    text-align: center;
-`
-
-const postStyle = css`
-    width: 867px;
-    display: inline-block;
-    background-color: rgb(241, 242, 244);
-    height: 510px;
 `
 export default Banner;
