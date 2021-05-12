@@ -15,7 +15,6 @@ interface itemProps {
     // division: string
 }
 const BannerCard: React.FC<itemProps> = ({key, data}) => {
-    console.log(data)
     return (
         <div
             key={key}

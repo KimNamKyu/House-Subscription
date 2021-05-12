@@ -1,6 +1,17 @@
 import { css } from "@emotion/react";
 import { Input } from 'antd';
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../store/store";
+import { useEffect } from "react";
+import { logedIn } from "../action/LoginAction";
+import Link from "next/link";
 const Header:React.FC = () => {
+    const {data, isloged, error} = useSelector((state:RootState) => state.header)
+    console.log(data)
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(logedIn())
+    },[])
     const {Search} = Input;
     const onSearch = () => {
         
@@ -19,9 +30,15 @@ const Header:React.FC = () => {
                     />
                 </div>
                 <div css={navLeft}>
-                    분양정보
-                    로그인 / 
-                    로그아웃
+                    <div>
+                        <Link href='/detail'><a>분양정보</a></Link>
+                    </div>
+                    {
+                        data ? 
+                        <div>로그아웃</div> : 
+                        <div>로그인</div>
+                    }
+                    
                 </div>
             </nav>
         </>
@@ -40,9 +57,16 @@ const navStyle = css`
     width: 100%;
 `
 const navLeft = css`
-    flex: 0 0 auto;
+    display: flex;
     align-items: center;
     margin-left: auto;
+    & > div {
+        margin-left: 30px;
+        cursor: pointer;
+        & > a {
+            color: black;
+        }
+    }
 `
 
 export default Header;

@@ -13,7 +13,6 @@ export const loadData = createAsyncThunk('load/data', async (data, thunkAPI) => 
   let minWeek = week.shift();
   let maxWeek = week.pop();
   const crawlingData = await delay(500, exData)
-
   let filter = crawlingData.filter((item: any) => {
     let period = item.period.split(' ~ ')
     if (period[0] >= "2021-04-09" && period[1] <= "2021-05-20") {
