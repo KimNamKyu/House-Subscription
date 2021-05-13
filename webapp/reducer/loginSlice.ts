@@ -1,28 +1,35 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { logedIn } from "../action/LoginAction";
-interface subscriptionState {
+import { signin } from "../action/LoginAction";
+import Router from 'next/router';
+interface userState {
     isloged: false | true,
-    data: object | undefined,
+    data: any,
     error: any
 }
 
-const initialState : subscriptionState = { isloged: false, data: {}, error: null} 
+const initialState : userState = { isloged: false, data: {}, error: null} 
 
-const subscriptionSlice = createSlice({
+const loginSlice = createSlice({
     name: 'logedin',
     initialState,
     reducers: {
+        logoutReducer: (state, action) => {
+            state.data = action.payload
+        }
     },
     extraReducers: (builder) => builder
-        .addCase(logedIn.pending, (state, action) => {
-            state.isloged = true
-        })
-        .addCase(logedIn.fulfilled, (state, action) => {
+        // .addCase(signin.pending, (state, action) => {
+        //     state.isloged = true
+        // })
+        .addCase(signin.fulfilled, (state, action) => {
             state.data = action.payload
             state.isloged = false
+            Router.push('/')
         })
-        .addCase(logedIn.rejected, (state, action) => {
+        .addCase(signin.rejected, (state, action) => {
             state.error = action.payload;
         })
 })
-export default subscriptionSlice;
+export default loginSlice;
+export const { reducer, actions } = loginSlice;
+export const {logoutReducer} = actions;

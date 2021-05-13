@@ -49,8 +49,6 @@ export const loadMagam = createAsyncThunk('load/magam', async (data, thunkAPI) =
       return {...v, status: 2, key: idx}
     }
   })
-  
-  console.log(filter)
   return filter
 });
 
