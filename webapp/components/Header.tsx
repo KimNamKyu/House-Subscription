@@ -23,6 +23,7 @@ const Header: React.FC = () => {
         dispatch(logoutReducer({data: undefined}))
         setModalFlag(false)
     }
+    
     return (
         <>
             <nav css={navStyle}>

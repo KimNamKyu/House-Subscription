@@ -1,11 +1,14 @@
 
 import { Table, Tag, Button } from 'antd';
+import { useCallback } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 interface tableProps {
     data: any
 }
 const DetailTable:React.FC<tableProps> = ({ data }: any) => {
-
+    const router = useRouter();
     const columns = [
         {
             title: '단계',
@@ -54,9 +57,17 @@ const DetailTable:React.FC<tableProps> = ({ data }: any) => {
         },
     ];
     
+    const onClickHandle = useCallback((record:any, rowIdx:any, event:any) => {
+        router.push(`/info/${record.key}`)
+    },[])
     return (
         <div>
             <Table
+                onRow={(record:any, rowIdx:any) => {
+                    return {
+                        onClick: (event:any) => {onClickHandle(record,rowIdx, event)}
+                    }
+                }}
                 columns={columns}
                 dataSource={data}
             />

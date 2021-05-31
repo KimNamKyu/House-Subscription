@@ -1,4 +1,4 @@
-import { FC, useCallback, useState, useEffect, useRef } from "react";
+import React, { FC, useCallback, useState, useEffect, useRef } from "react";
 import Modal from "./Modal";
 import { Form, Input, Button } from "antd";
 import { css } from "@emotion/react";
@@ -10,7 +10,7 @@ interface Props {
     onClickModalClose: (...args: any) => any;
 }
 
-const SignModal: FC<Props> = ({ onClickModalClose }) => {
+const SignModal: FC<Props> = React.memo(({ onClickModalClose }) => {
     const dispatch = useDispatch();
     const mdRef = useRef<HTMLDivElement>(null);
     const [email, onChangeEmail] = useInput('')
@@ -52,7 +52,7 @@ const SignModal: FC<Props> = ({ onClickModalClose }) => {
             </Form>
         </Modal>
     )
-}
+})
 
 const headerStyle = css`
     position: relative;

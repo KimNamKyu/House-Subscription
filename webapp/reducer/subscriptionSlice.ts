@@ -1,14 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {loadData, loadMagam, loadDetailData} from '../action/subsciptionAction';
+import {loadData, loadMagam, loadDetailData, loadInfoDetail} from '../action/subsciptionAction';
 interface subscriptionState {
     isloding: false | true,
     data: Array<object>,
     magamData: Array<object>,
     allData: Array<object>,
+    selectData: Array<object>,
     error: any
 }
 
-const initialState : subscriptionState = { isloding: false, data: [], error: null, magamData:[], allData: []} 
+const initialState : subscriptionState = { isloding: false, data: [], error: null, magamData:[], allData: [], selectData: []} 
 
 const subscriptionSlice = createSlice({
     name: 'subscription',
@@ -38,6 +39,13 @@ const subscriptionSlice = createSlice({
         })
         .addCase(loadDetailData.fulfilled, (state, action) => {
             state.allData = action.payload
+            state.isloding = false
+        })
+        // .addCase(loadInfoDetail(), (state, action) => {
+        //     state.error = action.payload;
+        // })
+        .addCase(loadInfoDetail.fulfilled, (state, action) => {
+            state.selectData = action.payload
             state.isloding = false
         })
 })
