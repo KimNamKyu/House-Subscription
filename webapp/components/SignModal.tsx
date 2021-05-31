@@ -1,4 +1,4 @@
-import { FC, useCallback, useState, useEffect } from "react";
+import { FC, useCallback, useState, useEffect, useRef } from "react";
 import Modal from "./Modal";
 import { Form, Input, Button } from "antd";
 import { css } from "@emotion/react";
@@ -12,9 +12,21 @@ interface Props {
 
 const SignModal: FC<Props> = ({ onClickModalClose }) => {
     const dispatch = useDispatch();
+    const mdRef = useRef<HTMLDivElement>(null);
     const [email, onChangeEmail] = useInput('')
     const [password, onChnagePassword] = useInput('');
-    
+
+    useEffect(() => {
+        window.addEventListener('click', outSideModlaClick);
+        return window.addEventListener('click', outSideModlaClick)
+    })
+
+    const outSideModlaClick = useCallback((e) => {
+        if(mdRef.current === e.target){
+            onClickModalClose();
+        }
+    },[])
+
     const onSubmit = useCallback(async (e) => {
         return await dispatch(signin({
             email: email,
@@ -22,7 +34,7 @@ const SignModal: FC<Props> = ({ onClickModalClose }) => {
         }))
     },[email, password])
     return (
-        <Modal>
+        <Modal ref={mdRef}>
             <div css={headerStyle}>
                 <h2>로그인</h2>
                 <Button css={buttonStyle} onClick={onClickModalClose} type="text">X</Button>

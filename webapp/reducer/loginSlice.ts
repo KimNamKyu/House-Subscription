@@ -15,6 +15,7 @@ const loginSlice = createSlice({
     reducers: {
         logoutReducer: (state, action) => {
             state.data = action.payload
+            Router.push('/')
         }
     },
     extraReducers: (builder) => builder

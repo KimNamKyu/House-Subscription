@@ -21,6 +21,7 @@ const Header: React.FC = () => {
     }
     const onClickLogOut = () => {
         dispatch(logoutReducer({data: undefined}))
+        setModalFlag(false)
     }
     return (
         <>
