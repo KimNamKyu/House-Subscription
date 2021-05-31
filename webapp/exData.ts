@@ -101,7 +101,7 @@ export default {
             winnersPeriod: '2021-04-16'
         },
         {
-            key: 8,
+            key: 9,
             area: '서울',
             division: '국민',
             parcel: '분양전환 불가임대',
@@ -113,7 +113,7 @@ export default {
             winnersPeriod: '2021-04-16'
         },
         {
-            key: 8,
+            key: 10,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -125,7 +125,7 @@ export default {
             winnersPeriod: '2020-12-17'
         },
         {
-            key: 9,
+            key: 11,
             area: '서울',
             division: '국민',
             parcel: '분양주택',
@@ -137,7 +137,7 @@ export default {
             winnersPeriod: '2020-12-16'
         },
         {
-            key: 10,
+            key: 12,
             area: '서울',
             division: '국민',
             parcel: '분양주택',
@@ -149,7 +149,7 @@ export default {
             winnersPeriod: '2020-12-16'
         },
         {
-            key: 11,
+            key: 13,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -161,7 +161,7 @@ export default {
             winnersPeriod: '2020-11-16'
         },
         {
-            key: 12,
+            key: 14,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -173,7 +173,7 @@ export default {
             winnersPeriod: '2020-10-27'
         },
         {
-            key: 13,
+            key: 15,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -185,7 +185,7 @@ export default {
             winnersPeriod: '2020-10-29'
         },
         {
-            key: 14,
+            key: 16,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -197,7 +197,7 @@ export default {
             winnersPeriod: '2020-09-22'
         },
         {
-            key: 15,
+            key: 17,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -209,7 +209,7 @@ export default {
             winnersPeriod: '2020-09-09'
         },
         {
-            key: 16,
+            key: 18,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -221,7 +221,7 @@ export default {
             winnersPeriod: '2020-09-01'
         },
         {
-            key: 16,
+            key: 19,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -233,7 +233,7 @@ export default {
             winnersPeriod: '2020-08-26'
         },
         {
-            key: 17,
+            key: 20,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -245,7 +245,7 @@ export default {
             winnersPeriod: '2020-08-26'
         },
         {
-            key: 18,
+            key: 21,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -257,7 +257,7 @@ export default {
             winnersPeriod: '2020-08-26'
         },
         {
-            key: 19,
+            key: 22,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -269,7 +269,7 @@ export default {
             winnersPeriod: '2020-08-27'
         },
         {
-            key: 20,
+            key: 23,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -281,7 +281,7 @@ export default {
             winnersPeriod: '2020-08-20'
         },
         {
-            key: 21,
+            key: 24,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -293,7 +293,7 @@ export default {
             winnersPeriod: '2020-08-21'
         },
         {
-            key: 22,
+            key: 25,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -305,7 +305,7 @@ export default {
             winnersPeriod: '2020-08-20'
         },
         {
-            key: 23,
+            key: 26,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -317,7 +317,7 @@ export default {
             winnersPeriod: '2020-08-20'
         },
         {
-            key: 24,
+            key: 27,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -329,7 +329,7 @@ export default {
             winnersPeriod: '2020-08-19'
         },
         {
-            key: 25,
+            key: 28,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -341,7 +341,7 @@ export default {
             winnersPeriod: '2020-07-29'
         },
         {
-            key: 26,
+            key: 29,
             area: '서울',
             division: '민영',
             parcel: '분양주택',
@@ -353,7 +353,7 @@ export default {
             winnersPeriod: '2020-07-29'
         },
         {
-            key: 27,
+            key: 30,
             area: '서울',
             division: '민영',
             parcel: '분양주택',

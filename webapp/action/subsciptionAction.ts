@@ -72,8 +72,10 @@ export const loadDetailData = createAsyncThunk('load/detail', async (data, thunk
 
 export const loadInfoDetail = createAsyncThunk(
   `load/Info`,
-  async (data, thunkAPI) => {
+  async (data:number, thunkAPI) => {
     const { aptInfo }: any = await delay(500, exData)
-    console.log(data)
-    return []
+    const filterData = aptInfo.filter((iter:any) => {
+      return iter.key === Number(data)
+    })
+    return filterData
   });

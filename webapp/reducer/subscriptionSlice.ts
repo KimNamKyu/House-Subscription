@@ -41,12 +41,15 @@ const subscriptionSlice = createSlice({
             state.allData = action.payload
             state.isloding = false
         })
-        // .addCase(loadInfoDetail(), (state, action) => {
-        //     state.error = action.payload;
-        // })
+        .addCase(loadInfoDetail.pending, (state, action) => {
+            state.isloding = true
+        })
         .addCase(loadInfoDetail.fulfilled, (state, action) => {
             state.selectData = action.payload
             state.isloding = false
+        })
+        .addCase(loadInfoDetail.rejected, (state, action) => {
+            state.error = action.error;
         })
 })
 export default subscriptionSlice;
