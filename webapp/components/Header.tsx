@@ -15,17 +15,17 @@ const Header: React.FC = () => {
     const onSearch = () => {
 
     }
-    const onHandleClcikModal = (e:any) => {
+    const onHandleClcikModal = (e: any) => {
         e.preventDefault;
         setModalFlag(true)
     }
     const onClickLogOut = () => {
-        dispatch(logoutReducer({data: undefined}))
+        dispatch(logoutReducer({ data: undefined }))
         setModalFlag(false)
     }
-    
+
     return (
-        <>
+        <div css={wrapper}>
             <nav css={navStyle}>
                 <div css={logoStyle}>
                     <Link href='/'><a>로고</a></Link>
@@ -50,15 +50,21 @@ const Header: React.FC = () => {
                             :
                             <div style={{ marginLeft: '30px' }}>
                                 <a onClick={onHandleClcikModal}>로그인</a>
-                                {modalFlag && <SignModal onClickModalClose={() => setModalFlag(false)}/>}
+                                {modalFlag && <SignModal onClickModalClose={() => setModalFlag(false)} />}
                             </div>
                     }
                 </div>
-                
             </nav>
-        </>
+        </div>
     )
 }
+
+const wrapper = css`
+    margin: 0 auto;
+    width: 1080px;
+    display: flex;
+`
+
 const logoStyle = css`
     flex: 0 0 auto;
     align-items: center;

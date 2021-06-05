@@ -36,11 +36,13 @@ const headerStyle = css`
     display: flex;
     border-bottom: 1px solid rgb(231,231,231);
     background-color: transparent;
-    height: 55px;
+    height: 70px;
 `
 
 const mainStyle = css`
     display: flex;
+    flex-flow: row nowrap;
+    flex-direction: column;
     width: 1200px;
     height: 100%;
     margin: 0px auto;
@@ -48,6 +50,4 @@ const mainStyle = css`
     position: relative;
 `
 const bannerStyle = css`
-    height: 650px;
-    border-bottom: 1px solid rgb(231,231,231);
 `

@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import Layout from '../components/Layout';
 import MainList from '../components/MainList';
 import Aside from '../components/Aside';
+import BannerSection from '../components/BannerSection';
+import WeekSection from '../components/WeekSection';
 
 const App:React.FC = () => {
     return (
@@ -13,9 +15,10 @@ const App:React.FC = () => {
                     <Header />
                 </Layout.Header>
                 <Layout.Banner>
-                    <Banner />
+                    <BannerSection />
                 </Layout.Banner>
                 <Layout.Main>
+                    <WeekSection />
                     <MainList />
                     {/* <Aside /> */}
                 </Layout.Main>

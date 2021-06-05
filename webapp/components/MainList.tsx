@@ -14,16 +14,26 @@ const MainList:React.FC = () => {
     }, [])
     return (
         <div css={wrapperMainStyle}>
-            <span><h1>분양정보</h1></span>
-            <MainTable data={magamData} />
+            <div css={wrapContent}>
+                <h2>분양정보</h2>
+                <MainTable data={magamData} />
+            </div>
         </div>
     )
 }
 
 const wrapperMainStyle = css`
     margin: 0 auto;
-    padding-top: 48px;
-    padding-bottom: 48px;
+    display: flex;
+    width: 1080px;
+`
+
+const wrapContent = css`
+    flex: 1;
+    padding-top: 20px;
+    padding-bottom: 20px; 
+    padding-left: 68px;
+    padding-right: 68px;
 `
 
 export default MainList;
