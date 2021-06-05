@@ -1,16 +1,13 @@
 import { css } from "@emotion/react";
 import BannerSlick from "./BannerSlick";
-import Subscription from './subscription'
-const Banner:React.FC = () => {
+const Banner: React.FC = () => {
     return (
-        <>
-            <div css={wrapperStyle}>
-                <span css={slicStyle}></span>
-                <div css={postStyle}>
-                    <BannerSlick />
-                </div>
+        <div css={wrapperStyle}>
+            <span css={slicStyle}></span>
+            <div css={postStyle}>
+                <BannerSlick />
             </div>
-        </>
+        </div>
     )
 }
 
