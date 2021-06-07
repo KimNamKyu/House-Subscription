@@ -46,8 +46,9 @@ const mainStyle = css`
     width: 1200px;
     height: 100%;
     margin: 0px auto;
-    padding: 0px 10px;
+    padding: px 10px;
     position: relative;
 `
 const bannerStyle = css`
+    padding: 10px;
 `

@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store/store';
 import { loadData } from '../../action/subsciptionAction';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 export type BannerSectionProps = {}
 
 type imgProp = {
@@ -16,62 +17,64 @@ function BannerSection({ }: BannerSectionProps) {
     useEffect(() => {
         dispatch(loadData())
     }, [])
-
-    
     const TOTAL_DATA = data.length;
-    const [target, setTarget] = useState(0)
-    const slideRef = useRef(null);
-    useEffect(() => {
-        // slideRef.current.style.transition = "all 0.5s ease-in-out";
-        // slideRef.current.style.transform = `translateX(-${target}00%)`;
-    }, [target])
+    const [current, setCurrent] = useState(0)
     const onClickLeft = () => {
-
+        setCurrent(current === TOTAL_DATA - 1 ? 0 : current + 1)
     }
     const onClickRight = () => {
-
+        setCurrent(current === 0 ? TOTAL_DATA - 1 : current - 1)
     }
+    
     return (
-        <div css={wrapper}>
-            <div css={BanneStyle} ref={slideRef}>
-                {data.map((item:any) => (
-                    <div>
-                        <img src={item.img} />
+        <article css={wrapper}>
+            <div>
+                <LeftOutlined className='left' onClick={onClickLeft}/>
+            </div>
+            
+            <RightOutlined className='right' onClick={onClickRight}/>
+            <div css={BanneStyle}>
+                {data.map((item:any, index: number) => (
+                    <div className={index === current ? 'slide active' : 'slide'}>
+                        {index === current && (<img src={item.img} alt="" />)}
                     </div>
                 ))}
             </div>
-            <button className='left' onClick={onClickLeft}>{`<`}</button>
-            <button className='right' onClick={onClickRight}>{`>`}</button>
-        </div>
+        </article>
     )
 }
 export default BannerSection;
 
 const wrapper = css`
-    margin: 0 auto;
-    width: 1080px;
-    & > .left {
-        background: yellow;
+    position: relative;
+        & > div > .left {
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        cursor: pointer;
+        z-index: 10;
+        font-size: 1.5rem;
+        color: yellow;
     }
+
     & > .right {
-        background: yellow;
+        position: absolute;
+        top: 50%;
+        cursor: pointer;
+        z-index: 10;
+        right: 22px;
+        font-size: 1.5rem;
+        color: yellow;
     }
 `
-
 const BanneStyle = css`
+    position: relative;
     display: flex;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    & > div {
+    justify-content: center;
+    align-items: center;
+    
+    & img {
         width: 1080px;
-        & > img {
-            width: 100%;
-        }
+        height: 300px;
     }
-`
-
-const imgStyle = (img:any) => css`
-    width: 1080px;
-    background: url(${img})
 `
