@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { css } from '@emotion/react';
 import { Tag } from 'antd';
+import { useRouter } from 'next/router';
 export type CardSectionProps = {
     key: number;
     data: any;
 }
 
 function CardSection({ key, data }: CardSectionProps) {
-    console.log(data.img)
+    const router = useRouter();
+    const onClickHandle = useCallback((e:any) => {
+        router.push(`/info/${data.key}`)
+    },[])
     return (
-        <div css={cardItem}>
+        <div css={cardItem} onClick={onClickHandle}>
             <div css={cardBoxTop(data.img)} />
             <div css={cardBoxBottom}>
                 <span><Tag color={'green'}>입주모집</Tag></span>
