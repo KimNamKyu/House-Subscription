@@ -28,17 +28,14 @@ function BannerSection({ }: BannerSectionProps) {
     
     return (
         <article css={wrapper}>
-            <div>
-                <LeftOutlined className='left' onClick={onClickLeft}/>
-            </div>
-            
-            <RightOutlined className='right' onClick={onClickRight}/>
             <div css={BanneStyle}>
+                <LeftOutlined className='left' onClick={onClickLeft}/>
                 {data.map((item:any, index: number) => (
                     <div className={index === current ? 'slide active' : 'slide'}>
                         {index === current && (<img src={item.img} alt="" />)}
                     </div>
                 ))}
+                <RightOutlined className='right' onClick={onClickRight}/>
             </div>
         </article>
     )
@@ -47,32 +44,31 @@ export default BannerSection;
 
 const wrapper = css`
     position: relative;
-        & > div > .left {
-        position: absolute;
-        top: 50%;
-        left: 0px;
-        cursor: pointer;
-        z-index: 10;
-        font-size: 1.5rem;
-        color: yellow;
-    }
-
-    & > .right {
-        position: absolute;
-        top: 50%;
-        cursor: pointer;
-        z-index: 10;
-        right: 22px;
-        font-size: 1.5rem;
-        color: yellow;
-    }
+    
 `
 const BanneStyle = css`
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    & > .left {
+        position: relative;
+        top: 50%;
+        left: 50px;
+        cursor: pointer;
+        z-index: 10;
+        font-size: 1.5rem;
+        color: lightgray;
+    }
+    & > .right {
+        position: relative;
+        top: 50%;
+        right: 50px;
+        cursor: pointer;
+        z-index: 10;
+        font-size: 1.5rem;
+        color: lightgray;
+    }
     & img {
         width: 1080px;
         height: 300px;
