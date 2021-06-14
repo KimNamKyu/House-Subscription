@@ -20,19 +20,8 @@ import "reflect-metadata";
 //     console.log("Here you can setup and run express/koa/any other framework.");
 
 // }).catch(error => console.log(error));
-import fastify from 'fastify';
 
-const PORT = parseInt(process.env.PORT, 10);
+import Server from './Server';
 
-const app = fastify({logger: true})
-app.get('/', (req, reply) => {
-    reply.send({hello: 'world'})
-})
-console.log(PORT)
-app.listen(PORT, (err,address) => {
-    if(err){
-        app.log.error(err);
-        process.exit(1);
-    }
-    app.log.info(`server listenig on ${address}`)
-})
+const server = new Server()
+server.start()
