@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { css } from '@emotion/react';
 import CardSection from '../CardSection';
-import { useSelector, useDispatch } from 'react-redux';
 import { loadData } from '../../action/subsciptionAction';
-import { RootState } from '../../store/store';
 import useLoadApt from '../../hooks/useLoadApt';
 export type WeekSectionProps = {}
 

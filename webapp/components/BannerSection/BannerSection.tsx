@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { css } from '@emotion/react';
 import { loadData } from '../../action/subsciptionAction';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
