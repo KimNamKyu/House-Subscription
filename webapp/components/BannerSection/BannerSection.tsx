@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { css } from '@emotion/react';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../store/store';
 import { loadData } from '../../action/subsciptionAction';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import useLoadApt from '../../hooks/useLoadApt';
 export type BannerSectionProps = {}
 
 type imgProp = {
@@ -12,11 +11,7 @@ type imgProp = {
 }
 
 function BannerSection({ }: BannerSectionProps) {
-    const { data, error, isloding } = useSelector((state: RootState) => state.subscription)
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(loadData())
-    }, [])
+    const {data, error, isloding} = useLoadApt(loadData);
     const TOTAL_DATA = data.length;
     const [current, setCurrent] = useState(0)
     const onClickLeft = () => {
@@ -30,7 +25,7 @@ function BannerSection({ }: BannerSectionProps) {
         <article css={wrapper}>
             <div css={BanneStyle}>
                 <LeftOutlined className='left' onClick={onClickLeft}/>
-                {data.map((item:any, index: number) => (
+                {data !== undefined && data.map((item:any, index: number) => (
                     <div className={index === current ? 'slide active' : 'slide'}>
                         {index === current && (<img src={item.img} alt="" />)}
                     </div>

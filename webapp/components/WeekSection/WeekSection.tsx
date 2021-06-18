@@ -4,14 +4,11 @@ import CardSection from '../CardSection';
 import { useSelector, useDispatch } from 'react-redux';
 import { loadData } from '../../action/subsciptionAction';
 import { RootState } from '../../store/store';
+import useLoadApt from '../../hooks/useLoadApt';
 export type WeekSectionProps = {}
 
 function WeekSection({ }: WeekSectionProps) {
-    const { data, error, isloding } = useSelector((state: RootState) => state.subscription)
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(loadData())
-    }, [])
+    const {data, error, isloding} = useLoadApt(loadData);
     return (
         <div css={wrapper}>
             <div css={weekStyle}>
