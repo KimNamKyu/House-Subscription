@@ -1,11 +1,11 @@
 import { css } from "@emotion/react";
 import { Input } from 'antd';
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../store/store";
+import { RootState } from "../../store/store";
 import { useState } from "react";
 import Link from "next/link";
-import SignModal from "./SignModal";
-import { logoutReducer } from "../reducer/loginSlice";
+import SignModal from "../SignModal";
+import { logoutReducer } from "../../reducer/loginSlice";
 
 const Header: React.FC = () => {
     const { data, isloged, error } = useSelector((state: RootState) => state.header)

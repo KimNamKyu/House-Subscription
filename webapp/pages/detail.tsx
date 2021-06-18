@@ -1,7 +1,6 @@
-import Layout from "../components/Layout";
-import Header from "../components/Header";
-import MainList from "../components/MainList";
-import DetailList from "../components/DetailList";
+import Layout from "../components/LayoutSection/Layout";
+import Header from "../components/LayoutSection/Header";
+import { DetailList } from "../components/DetailSection";
 
 const detail:React.FC = () => {
     return (

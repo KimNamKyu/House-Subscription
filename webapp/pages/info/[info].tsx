@@ -1,5 +1,5 @@
-import Layout from "../../components/Layout";
-import Header from "../../components/Header";
+import Layout from "../../components/LayoutSection/Layout";
+import Header from "../../components/LayoutSection/Header";
 import SelectInfo from "../../components/SelectInfo";
 
 const Info:React.FC = () => {

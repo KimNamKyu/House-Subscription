@@ -1,9 +1,9 @@
 import { css } from "@emotion/react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { loadMagam } from "../action/subsciptionAction";
+import { loadMagam } from "../../action/subsciptionAction";
 import MainTable from "./MainTable";
-import { RootState } from "../store/store";
+import { RootState } from "../../store/store";
 
 const MainList:React.FC = () => {
     const { magamData, error, isloding } = useSelector((state:RootState) => state.subscription)

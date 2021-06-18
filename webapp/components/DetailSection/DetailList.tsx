@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../store/store";
+import { RootState } from "../../store/store";
 import { useState } from "react";
-import { loadDetailData } from "../action/subsciptionAction";
+import { loadDetailData } from "../../action/subsciptionAction";
 import { css } from "@emotion/react";
 import { Select } from 'antd';
 import { DatePicker, Space } from 'antd';

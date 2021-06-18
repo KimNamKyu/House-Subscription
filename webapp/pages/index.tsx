@@ -1,11 +1,9 @@
 import React from 'react';
-import Banner from '../components/Banner';
-import Header from '../components/Header';
-import Layout from '../components/Layout';
-import MainList from '../components/MainList';
-import Aside from '../components/Aside';
+import Header from '../components/LayoutSection/Header';
+import Layout from '../components/LayoutSection/Layout';
 import BannerSection from '../components/BannerSection';
 import WeekSection from '../components/WeekSection';
+import { MainList } from '../components/MainSection';
 
 const App:React.FC = () => {
     return (
@@ -20,7 +18,6 @@ const App:React.FC = () => {
                 <Layout.Main>
                     <WeekSection />
                     <MainList />
-                    {/* <Aside /> */}
                 </Layout.Main>
             </Layout>
         </>
