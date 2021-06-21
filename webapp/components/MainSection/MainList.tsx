@@ -4,14 +4,10 @@ import { useEffect } from "react";
 import { loadMagam } from "../../action/subsciptionAction";
 import MainTable from "./MainTable";
 import { RootState } from "../../store/store";
+import useMagamApt from "../../hooks/useMagamApt";
 
 const MainList:React.FC = () => {
-    const { magamData, error, isloding } = useSelector((state:RootState) => state.subscription)
-
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(loadMagam())
-    }, [])
+    const {magamData, error, isloding} = useMagamApt(loadMagam);
     return (
         <div css={wrapperMainStyle}>
             <div css={wrapContent}>
